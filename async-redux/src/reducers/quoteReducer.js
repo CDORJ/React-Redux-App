@@ -13,6 +13,12 @@ export const quoteReducer = (state = initialState, action) => {
         ...state,
         isLoading: true,
       };
+    case DATA_LOADED:
+      return {
+        ...state,
+        isLoading: false,
+        quote: action.payload
+      }
     default:
       return state;
   }

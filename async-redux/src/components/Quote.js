@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 const Quote = (props) => {
     return (
         <>
-            {props.isLoading ? (
+            {/* props.isLoading ? (
                 <div>***FETCHING DATA***</div>
             ) : props.error ? (
                     <div style={{ color: 'red' }}>{props.error}</div>
@@ -14,7 +14,7 @@ const Quote = (props) => {
                         return <div>quote.quoteText</div>
                     })
             )
-        }
+         */}
         </>
     );
 };

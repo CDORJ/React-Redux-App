@@ -1,22 +1,44 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { loadQuote } from "../actions/quoteActions";
 
 const Params = (props) => {
-  const [limit, setLimit] = useState(1);
+  const [form, setForm] = useState({
+    limit: 1,
+    genre: "",
+  });
+  const [genre, setGenre] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://quote-garden.herokuapp.com/api/v3/genres")
+      .then((res) => {
+        // console.log(res.data.data);
+        setGenre(res.data.data);
+      });
+  }, []);
 
   const handleChange = (e) => {
-    setLimit(e.target.value);
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleClick = (e) => {
-      e.preventDefault();
-      props.loadQuote(limit)
+    e.preventDefault();
+    props.loadQuote(form);
   };
 
   return (
     <div>
-      <input value={limit} onChange={handleChange} />
+      <input name="limit" value={form.limit} onChange={handleChange} />
+      <select name="genre" value={form.genre} onChange={handleChange}>
+        {genre.map((item) => (
+          <option value={item}>{item}</option>
+        ))}
+      </select>
       <button onClick={handleClick}>Qet Your Quotes</button>
     </div>
   );
