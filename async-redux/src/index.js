@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import rootReducer from '../src/reducers/index'
+import rootReducer from '../src/reducers';
 
 
 

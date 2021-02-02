@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import { giffyReducer as GR } from './giffyReducer'
+import { quoteReducer as QR } from './quoteReducer';
+
 
 export default combineReducers({
-    GR,
+    QR,
 })

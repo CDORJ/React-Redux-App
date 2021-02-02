@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Quote from "./components/Quote";
+import Params from "./components/Params";
 
-const initialGenre = ["age", "alone", "graft", "beer"];
+
 
 function App() {
   const [genre, setGenre] = useState([]);
@@ -26,6 +28,7 @@ function App() {
         setGenre(res.data.data);
       })
       .catch((err) => console.log("err from genre axios", err));
+      
   }, []);
 
   useEffect(() => {
@@ -33,13 +36,19 @@ function App() {
       `https://quote-garden.herokuapp.com/api/v3/quotes/?genre=${selectedGenre}&limit=${number}`
     )
       .then((res) => {
-      console.log("this is the quote based on genre", res)
+        console.log("this is the quote based on genre", res.data.data)
+        setQuote(res.data.data)
     })
-  }, [selectGenre, setCount])
+  }, [selectedGenre, number])
+  // console.log("this is the quote", quote)
+
 
   return (
     <div className="App">
-      <select
+      <h2>List of Quotes</h2>
+      <Params />
+      <Quote />
+      {/* <select
         value={selectedGenre}
         onChange={(e) => selectGenre(e.target.value)}
       >
@@ -49,6 +58,14 @@ function App() {
         {console.log(selectedGenre)}
       </select>
       <input type='number' onChange={(e) => setCount(e.target.value)}></input>
+      
+        {quote.map((item) => (
+          <div key={item.id}>
+            <h4>{item.quoteText}</h4>
+            <p>{item.quoteAuthor}</p>
+          </div>
+        ))} */}
+     
     </div>
   );
 }
