@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import axios from "axios";
+
 import Quote from "./components/Quote";
 import Params from "./components/Params";
-
-
 
 function App() {
   // const [genre, setGenre] = useState([]);
@@ -28,7 +26,7 @@ function App() {
   //       setGenre(res.data.data);
   //     })
   //     .catch((err) => console.log("err from genre axios", err));
-      
+
   // }, []);
 
   // useEffect(() => {
@@ -41,7 +39,6 @@ function App() {
   //   })
   // }, [selectedGenre, number])
   // // console.log("this is the quote", quote)
-
 
   return (
     <div className="App">
@@ -65,7 +62,6 @@ function App() {
             <p>{item.quoteAuthor}</p>
           </div>
         ))} */}
-     
     </div>
   );
 }

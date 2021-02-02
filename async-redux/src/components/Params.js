@@ -44,8 +44,6 @@ const Params = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {};
-};
+
 
 export default connect(null, { loadQuote })(Params);
