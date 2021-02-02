@@ -14,7 +14,7 @@ const Params = (props) => {
     axios
       .get("https://quote-garden.herokuapp.com/api/v3/genres")
       .then((res) => {
-        // console.log(res.data.data);
+        // console.log("this is the genre list",res.data);
         setGenre(res.data.data);
       });
   }, []);
@@ -36,7 +36,7 @@ const Params = (props) => {
       <input name="limit" value={form.limit} onChange={handleChange} />
       <select name="genre" value={form.genre} onChange={handleChange}>
         {genre.map((item) => (
-          <option value={item}>{item}</option>
+          <option value={item} key={item}>{item}</option>
         ))}
       </select>
       <button onClick={handleClick}>Qet Your Quotes</button>
