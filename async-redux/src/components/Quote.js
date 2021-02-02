@@ -1,22 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 
-
-const Quote = (props) => {
-    return (
-        <>
-            {/* props.isLoading ? (
-                <div>***FETCHING DATA***</div>
-            ) : props.error ? (
-                    <div style={{ color: 'red' }}>{props.error}</div>
-                ) : (
-                        props.quote.map((quote) => {
-                        return <div>quote.quoteText</div>
-                    })
-            )
-         */}
-        </>
-    );
+const Quote = ({ isLoading, quote, error }) => {
+  console.log("props.quote from Quote.js", quote);
+  return (
+    <>
+      {quote.map((item) => {
+        return (
+          <div key={item.id}>
+            <h4>{item.quoteText}</h4>
+            <p>{item.quoteAuthor}</p>
+          </div>
+        );
+      })}
+    </>
+  );
 };
 
 const mapStateToProps = (state) => {
