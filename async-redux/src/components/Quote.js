@@ -6,17 +6,31 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: 15px;
   background-color: #cccccc;
 `;
 
+const StyledH5 = styled.h5`
+  font-family: "Catamaran", Sans-Serif;
+  font-size: 13px;
+`;
+const StyledH3 = styled.h3`
+  font-family: "Lato", Sans-Serif;
+  font-size: 20px;
+`;
+const StyledH4 = styled.h4`
+  font-family: "Catamaran", Sans-Serif;
+  font-size: 16px;
+`;
+
 const CardContainer = styled.div`
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr;
 grid-template-rows: auto;
-width: 65%;
-margin: 0 auto;
-border: 1px solid red;
+width: 85%;
+margin: 20px auto;
+// border: 1px solid red;
 `;
 
 const Quote = (props) => {
@@ -32,9 +46,9 @@ const Quote = (props) => {
           {props.quote.map((item) => {
             return (
               <StyledDiv key={item.id}>
-                <h5>Quote Genre: {item.quoteGenre}</h5>
-                <h3>{item.quoteText}</h3>
-                <h4>{item.quoteAuthor}</h4>
+                <StyledH5>Quote Genre: {item.quoteGenre}</StyledH5>
+                <StyledH3>{item.quoteText}</StyledH3>
+                <StyledH4>{item.quoteAuthor}</StyledH4>
               </StyledDiv>
             );
           })}
