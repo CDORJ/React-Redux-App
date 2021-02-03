@@ -19,6 +19,12 @@ export const quoteReducer = (state = initialState, action) => {
         isLoading: false,
         quote: action.payload
       }
+    case DATA_ERROR: 
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      }
     default:
       return state;
   }

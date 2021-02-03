@@ -34,7 +34,7 @@ margin: 20px auto;
 `;
 
 const Quote = (props) => {
-  console.log("props.quote from Quote.js", props);
+  // console.log("props.quote from Quote.js", props);
   return (
     <div>
       {props.isLoading ? (
