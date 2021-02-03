@@ -1,0 +1,97 @@
+@import "./reset.css";
+
+$headingFont: "BioRhyme Expanded", serif;
+$accentFont: "Anton", sans-serif;
+
+$blacks: (
+  dark: #131417,
+  base: #18191c,
+  mid: #1c1e21,
+  mid-light: #222429,
+  light: #292b30,
+);
+
+$whites: (
+  dark: #bfbfbf,
+  base: #cccccc,
+  mid: #d9d9d9,
+  mid-light: #e6e6e6,
+  light: #f2f2f2,
+);
+
+$blues: (
+  dark: #03658c,
+  base: #1e82a6,
+  mid: #4cc5e0,
+  mid-light: #7ed1f2,
+  light: #99d9f2,
+);
+
+@function selectBlack($colorName) {
+  @return map-get($blacks, $colorName);
+}
+
+@function selectWhite($colorName) {
+  @return map-get($whites, $colorName);
+}
+
+@function selectBlue($colorName) {
+  @return map-get($blues, $colorName);
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: selectBlack(base);
+  background: radial-gradient(
+    circle at bottom,
+    selectBlack(mid-light) 0%,
+    selectBlack(base) 100%
+  );
+
+  .card {
+    border-radius: 0.5rem;
+    background-color: selectBlack(mid-light);
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 0px selectBlack(base);
+  }
+}
+
+h1 {
+  font-family: $headingFont;
+  text-align: center;
+  font-size: 2rem;
+  color: selectBlue(dark);
+  padding: 1rem;
+
+  span {
+    display: block;
+    font-family: $accentFont;
+    font-size: 3.5rem;
+    color: selectWhite(base);
+    letter-spacing: 0.2rem;
+  }
+}
+
+.activity {
+  color: selectBlue(dark);
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  background-color: selectBlack(mid);
+  border-top: 4px solid selectBlack(light);
+
+  p {
+    strong {
+      font-family: $accentFont;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: selectWhite(dark);
+      letter-spacing: 0.07rem;
+    }
+  }
+}

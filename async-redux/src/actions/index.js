@@ -1,8 +1,11 @@
-export const DO_SOME_SHIT = "DO_SOME_SHIT";
+// import axios from "axios";
 
-export const doSomeShit = () => {
+export const GETTING_ACTIVITIES = "GETTING_ACTIVITIES";
+export const LIST_ACTIVITIES = "LIST_ACTIVITIES";
+
+export const getActivities = (/* params */) => (/* dispatch */) => {
   return {
-    type: DO_SOME_SHIT,
+    type: GETTING_ACTIVITIES,
     payload: "something",
   };
 };

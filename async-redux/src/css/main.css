@@ -1,0 +1,58 @@
+@import url(/Volumes/ORJ_8TB/Lambda Files/Git Files/React-Redux-App/async-redux/src/css/reset.css);
+html {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #18191c;
+  background: radial-gradient(circle at bottom, #222429 0%, #18191c 100%);
+}
+
+html .card {
+  border-radius: 0.5rem;
+  background-color: #222429;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 5px 0px #18191c;
+          box-shadow: 0px 0px 5px 0px #18191c;
+}
+
+h1 {
+  font-family: "BioRhyme Expanded", serif;
+  text-align: center;
+  font-size: 2rem;
+  color: #03658c;
+  padding: 1rem;
+}
+
+h1 span {
+  display: block;
+  font-family: "Anton", sans-serif;
+  font-size: 3.5rem;
+  color: #cccccc;
+  letter-spacing: 0.2rem;
+}
+
+.activity {
+  color: #03658c;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #1c1e21;
+  border-top: 4px solid #292b30;
+}
+
+.activity p strong {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #bfbfbf;
+  letter-spacing: 0.07rem;
+}
+/*# sourceMappingURL=main.css.map */

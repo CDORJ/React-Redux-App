@@ -1,11 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
-import TestComponent from "./components/TestComponent";
+import CardComponent from "./components/CardComponent";
+import "./css/main.css";
 
 function App() {
   return (
-    <div className="App">
-      <TestComponent />
+    <div className="card">
+      <header>
+        <h1>
+          need<span>ADVICE</span>
+        </h1>
+      </header>
+      <CardComponent />
     </div>
   );
 }
